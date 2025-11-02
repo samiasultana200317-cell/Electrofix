@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Devices - ElectroFix</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="../index.html">
+                <i class="bi bi-tools me-2"></i>ElectroFix
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="buy.html">Buy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sell.html">Sell</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="repair.html">Repair</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-5 pt-4">
+        <!-- Page Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="display-5 fw-bold">Buy Quality Devices</h1>
+                <p class="lead text-muted">Find certified pre-owned devices with warranty</p>
+            </div>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <div class="row g-3">
+                    <!-- Search Bar -->
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" id="search-input" class="form-control" placeholder="Search devices, brands, models...">
+                            <button id="search-btn" class="btn btn-primary">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Category Filter -->
+                    <div class="col-md-3">
+                        <label class="form-label">Category</label>
+                        <select id="category-filter" class="form-select">
+                            <option value="all">All Categories</option>
+                            <option value="phone">Smartphones</option>
+                            <option value="laptop">Laptops</option>
+                            <option value="tablet">Tablets</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Brand Filter -->
+                    <div class="col-md-3">
+                        <label class="form-label">Brand</label>
+                        <select id="brand-filter" class="form-select">
+                            <option value="all">All Brands</option>
+                            <option value="apple">Apple</option>
+                            <option value="samsung">Samsung</option>
+                            <option value="dell">Dell</option>
+                            <option value="hp">HP</option>
+                            <option value="lenovo">Lenovo</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Price Range -->
+                    <div class="col-md-4">
+                        <label class="form-label">Price Range</label>
+                        <input type="range" id="price-slider" class="form-range" min="0" max="5000" value="5000">
+                        <div class="d-flex justify-content-between">
+                            <small>$0</small>
+                            <small id="price-value">$5000</small>
+                        </div>
+                    </div>
+                    
+                    <!-- Condition Filter -->
+                    <div class="col-md-4">
+                        <label class="form-label">Condition</label>
+                        <select id="condition-filter" class="form-select">
+                            <option value="all">Any Condition</option>
+                            <option value="excellent">Excellent</option>
+                            <option value="good">Good</option>
+                            <option value="fair">Fair</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Sort Options -->
+                    <div class="col-md-4">
+                        <label class="form-label">Sort By</label>
+                        <select id="sort-by" class="form-select">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="mb-0">Available Devices</h4>
+                    <span class="text-muted" id="product-count">12 devices found</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4" id="products-grid">
+            <!-- Products will be loaded here -->
+        </div>
+
+        <!-- Load More -->
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <button id="load-more-btn" class="btn btn-primary btn-lg">
+                    <i class="bi bi-arrow-down me-2"></i>Load More Devices
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-tools me-2"></i>ElectroFix
+                    </h5>
+                    <p class="text-light">Your trusted partner for device solutions.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="buy.html" class="text-light text-decoration-none">Buy</a></li>
+                        <li><a href="sell.html" class="text-light text-decoration-none">Sell</a></li>
+                        <li><a href="repair.html" class="text-light text-decoration-none">Repair</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled text-light">
+                        <li><i class="bi bi-envelope me-2"></i>support@electrofix.com</li>
+                        <li><i class="bi bi-phone me-2"></i>+1 (555) 123-4567</li>
+                        <li><i class="bi bi-geo-alt me-2"></i>123 Tech Street, City</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 ElectroFix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/buy-page.js"></script>
+</body>
+</html>

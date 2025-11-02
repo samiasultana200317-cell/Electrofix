@@ -1,0 +1,412 @@
+:root {
+    --primary: #2563eb;
+    --secondary: #64748b;
+    --accent: #f59e0b;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --success: #10b981;
+    --danger: #ef4444;
+}
+
+/* Custom Styles */
+.hero-section {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%);
+    margin-top: 76px;
+}
+
+.feature-card, .category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover, .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* AI Chat Styles */
+.ai-messages {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.message-bubble {
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    margin-left: auto;
+}
+
+.ai-message {
+    margin-right: auto;
+}
+
+/* Category Cards */
+.category-card {
+    cursor: pointer;
+}
+
+.category-card:hover {
+    border-color: var(--primary) !important;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+.btn-warning {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #e69008;
+    border-color: #e69008;
+    color: white;
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1050;
+    min-width: 300px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+}
+
+/* Product Cards */
+.product-card {
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Form Styles */
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+/* Badge Styles */
+.badge-excellent {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.badge-good {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.badge-fair {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Price Styles */
+.original-price {
+    text-decoration: line-through;
+    color: var(--secondary);
+}
+
+.discount-badge {
+    background-color: var(--accent);
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+        padding: 3rem 0;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .notification {
+        left: 10px;
+        right: 10px;
+        top: 80px;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Shadows */
+.shadow-custom {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Step Progress */
+.step-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+    position: relative;
+}
+
+.step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background-color: #e2e8f0;
+    z-index: 1;
+}
+
+.step.active:not(:last-child)::after {
+    background-color: var(--primary);
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.step.active .step-number {
+    background-color: var(--primary);
+    color: white;
+}
+
+.step.completed .step-number {
+    background-color: var(--success);
+    color: white;
+}
+
+/* Upload Area Styles */
+.upload-area {
+    border: 2px dashed #dee2e6;
+    border-radius: 0.375rem;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.upload-area:hover {
+    border-color: var(--primary);
+}
+
+.upload-area.dragover {
+    border-color: var(--primary);
+    background-color: #f0f9ff;
+}
+
+/* Password Strength */
+.password-strength {
+    margin-top: 0.5rem;
+}
+
+.strength-bar {
+    height: 4px;
+    background-color: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-weak {
+    width: 33%;
+    background-color: var(--danger);
+}
+
+.strength-medium {
+    width: 66%;
+    background-color: var(--accent);
+}
+
+.strength-strong {
+    width: 100%;
+    background-color: var(--success);
+}
+/* Auth Pages */
+.auth-page {
+    padding: 120px 0 50px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.auth-container {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.auth-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+
+.auth-header p {
+    color: var(--secondary);
+}
+
+.auth-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form .form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+
+.auth-divider {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+.auth-divider span {
+    background: white;
+    padding: 0 1rem;
+    color: var(--secondary);
+    position: relative;
+    z-index: 1;
+}
+
+.social-auth .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-footer {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+}
+
+.auth-footer a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Password Strength */
+.password-strength {
+    margin-top: 0.5rem;
+}
+
+.strength-bar {
+    height: 4px;
+    background-color: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.25rem;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    border-radius: 2px;
+}
+
+.strength-weak {
+    width: 33%;
+    background-color: var(--danger);
+}
+
+.strength-medium {
+    width: 66%;
+    background-color: var(--accent);
+}
+
+.strength-strong {
+    width: 100%;
+    background-color: var(--success);
+}
+
+.strength-text {
+    color: var(--secondary);
+    font-size: 0.875rem;
+}

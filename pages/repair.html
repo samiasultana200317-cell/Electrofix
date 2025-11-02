@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repair Services - ElectroFix</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="../index.html">
+                <i class="bi bi-tools me-2"></i>ElectroFix
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="buy.html">Buy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sell.html">Sell</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="repair.html">Repair</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-5 pt-4">
+        <!-- Page Header -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h1 class="display-5 fw-bold">Device Repair Services</h1>
+                <p class="lead text-muted">Professional repair services with warranty and quick turnaround</p>
+            </div>
+        </div>
+
+        <!-- Service Selection -->
+        <div class="row mb-5">
+            <div class="col-12 text-center mb-4">
+                <h2 class="fw-bold">Select Your Device Type</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100 border-0 shadow-sm" data-device="phone">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-phone display-1 text-primary mb-3"></i>
+                        <h4 class="card-title">Smartphone Repair</h4>
+                        <p class="card-text text-muted">Screen replacement, battery, camera issues</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary fs-6">Starting at $49</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100 border-0 shadow-sm" data-device="laptop">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-laptop display-1 text-primary mb-3"></i>
+                        <h4 class="card-title">Laptop Repair</h4>
+                        <p class="card-text text-muted">Hardware, software, screen, keyboard issues</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary fs-6">Starting at $79</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100 border-0 shadow-sm" data-device="tablet">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-tablet display-1 text-primary mb-3"></i>
+                        <h4 class="card-title">Tablet Repair</h4>
+                        <p class="card-text text-muted">Screen, battery, charging port issues</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary fs-6">Starting at $59</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repair Form -->
+        <div class="row justify-content-center" id="repair-form" style="display: none;">
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0"><i class="bi bi-clipboard-plus me-2"></i>Repair Request Form</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="repair-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Device Type *</label>
+                                    <select id="repair-device-type" class="form-select" required>
+                                        <option value="">Select Device Type</option>
+                                        <option value="phone">Smartphone</option>
+                                        <option value="laptop">Laptop</option>
+                                        <option value="tablet">Tablet</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Brand *</label>
+                                    <select id="repair-brand" class="form-select" required>
+                                        <option value="">Select Brand</option>
+                                        <option value="apple">Apple</option>
+                                        <option value="samsung">Samsung</option>
+                                        <option value="dell">Dell</option>
+                                        <option value="hp">HP</option>
+                                        <option value="lenovo">Lenovo</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Model *</label>
+                                    <input type="text" id="repair-model" class="form-control" placeholder="e.g., iPhone 14, Dell XPS 13" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Repair Issues *</label>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Common Issues</h6>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="issues" value="screen" id="issue-screen">
+                                                        <label class="form-check-label" for="issue-screen">Screen broken/cracked</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="issues" value="battery" id="issue-battery">
+                                                        <label class="form-check-label" for="issue-battery">Battery not holding charge</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="issues" value="charging" id="issue-charging">
+                                                        <label class="form-check-label" for="issue-charging">Not charging</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="issues" value="water" id="issue-water">
+                                                        <label class="form-check-label" for="issue-water">Water damage</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="issues" value="software" id="issue-software">
+                                                        <label class="form-check-label" for="issue-software">Software issues</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="issues" value="performance" id="issue-performance">
+                                                        <label class="form-check-label" for="issue-performance">Slow performance</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Issue Description</label>
+                                    <textarea id="issue-description" class="form-control" rows="3" placeholder="Please describe the issue in detail..."></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Upload Photos of the Issue</label>
+                                    <div class="upload-area border-2 border-dashed rounded p-4 text-center">
+                                        <i class="bi bi-camera display-4 text-muted mb-3"></i>
+                                        <p class="text-muted">Upload photos to help us understand the issue</p>
+                                        <input type="file" id="issue-photos" class="d-none" multiple accept="image/*">
+                                        <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('issue-photos').click()">
+                                            Select Photos
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cost Estimation -->
+                            <div class="card mt-4 bg-light">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="bi bi-calculator me-2"></i>Estimated Repair Cost</h5>
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="h3 text-primary mb-1" id="estimated-price">$99 - $149</div>
+                                            <small class="text-muted">Final price after inspection</small>
+                                        </div>
+                                        <div class="col-md-6 text-md-end">
+                                            <div class="d-flex align-items-center justify-content-md-end">
+                                                <i class="bi bi-shield-check text-success fs-4 me-2"></i>
+                                                <span class="text-success">90-day warranty included</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="mt-4">
+                                <h5 class="mb-4"><i class="bi bi-person me-2"></i>Contact Information</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Full Name *</label>
+                                        <input type="text" id="customer-name" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Email *</label>
+                                        <input type="email" id="customer-email" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Phone Number *</label>
+                                        <input type="tel" id="customer-phone" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Preferred Service Location</label>
+                                        <select id="service-location" class="form-select">
+                                            <option value="store">In-Store Service</option>
+                                            <option value="pickup">Pickup & Delivery</option>
+                                        </select>
+                                    </div>
+                                </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="bi bi-send me-2"></i>Submit Repair Request
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-tools me-2"></i>ElectroFix
+                    </h5>
+                    <p class="text-light">Your trusted partner for device solutions.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="buy.html" class="text-light text-decoration-none">Buy</a></li>
+                        <li><a href="sell.html" class="text-light text-decoration-none">Sell</a></li>
+                        <li><a href="repair.html" class="text-light text-decoration-none">Repair</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled text-light">
+                        <li><i class="bi bi-envelope me-2"></i>support@electrofix.com</li>
+                        <li><i class="bi bi-phone me-2"></i>+1 (555) 123-4567</li>
+                        <li><i class="bi bi-geo-alt me-2"></i>123 Tech Street, City</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 ElectroFix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/repair-page.js"></script>
+</body>
+</html>
