@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroFix - Electronics Repair Services</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ElectroFix</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="pages/services.html" class="nav-link">Services</a>
+                <a href="pages/bookings.html" class="nav-link">Bookings</a>
+                <a href="pages/profile.html" class="nav-link">Profile</a>
+                <a href="pages/login.html" class="nav-link login-btn">Login</a>
+                <a href="pages/register.html" class="nav-link register-btn">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Electronics Repair Services</h1>
+            <p>Fast, reliable, and affordable repair services for all your electronic devices</p>
+            <div class="hero-buttons">
+                <a href="pages/services.html" class="btn btn-primary">Book a Service</a>
+                <a href="pages/services.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be loaded dynamically -->
+            </div>
+            <div class="text-center">
+                <a href="pages/services.html" class="btn btn-outline">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant">
+        <button class="ai-toggle" id="aiToggle">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-header">
+                <h4>ElectroFix Assistant</h4>
+                <button class="ai-close" id="aiClose">&times;</button>
+            </div>
+            <div class="ai-messages" id="aiMessages"></div>
+            <div class="ai-input">
+                <input type="text" id="aiInput" placeholder="Ask about our services...">
+                <button id="aiSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/ai-assistant.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

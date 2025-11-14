@@ -1,0 +1,1 @@
+default_app_config = 'electrofix_app.apps.ElectrofixAppConfig'

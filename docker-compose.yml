@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: electrofix_mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: electrofix
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb_data:/data/db
+      - ./backend/mongodb/init.js:/docker-entrypoint-initdb.d/init.js:ro
+    networks:
+      - electrofix-network
+
+  backend:
+    build: ./backend
+    container_name: electrofix_backend
+    restart: unless-stopped
+    environment:
+      - DEBUG=True
+      - DJANGO_SECRET_KEY=django-insecure-your-secret-key-here
+      - MONGODB_NAME=electrofix
+      - MONGODB_USERNAME=admin
+      - MONGODB_PASSWORD=password123
+      - MONGODB_HOST=mongodb
+      - MONGODB_PORT=27017
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - mongodb
+    networks:
+      - electrofix-network
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+
+networks:
+  electrofix-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
